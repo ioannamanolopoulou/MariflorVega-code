@@ -2,13 +2,12 @@
 #Model Selection - Stepwise using AIC
 library("pROC")
 
-
 PresBack = function(AllData) #P/BG logistic regression
 {
   ## Define Ntilde which has 0/1 as N, rather than -1/1
   AllData$Ntilde = AllData$N 
   AllData$Ntilde[AllData$Ntilde==-1] = 0
-  ##
+  ##blablabla
   
   #take a random sample of size N rather than all background points. 
   AllData[AllData$Ntilde==0,] = AllData[sample(which(AllData$Ntilde==0),sum(AllData$Ntilde==0),replace=TRUE),]
